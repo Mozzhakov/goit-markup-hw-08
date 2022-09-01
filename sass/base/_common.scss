@@ -1,0 +1,27 @@
+body {
+  background-color: var(--primary-white-color);
+  color: var(--primary-text-color);
+
+  font-family: var(--main-font-family);
+  @include font(null, 14px, null, 0.03em);
+}
+
+.list {
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.section-title {
+  color: var(--title-text-color);
+  @include font(null, 36px, 1.17, null);
+  text-align: center;
+  margin-bottom: 50px;
+}

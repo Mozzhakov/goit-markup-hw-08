@@ -1,0 +1,26 @@
+.feature-list {
+  display: flex;
+  gap: 30px;
+  &__item {
+    max-width: 270px;
+  }
+  &__box {
+    @extend %align-list;
+    justify-content: center;
+    width: 270px;
+    height: 120px;
+    margin-bottom: 30px;
+
+    background-color: var(--secondary-bg-color);
+    border-radius: 4px;
+  }
+  &__title {
+    color: var(--title-text-color);
+    @include font(null, 14px, 1.14, null);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  &__text {
+    line-height: 1.71;
+  }
+}

@@ -1,0 +1,107 @@
+.footer {
+  background-color: var(--footer-bg-color);
+  padding-top: 60px;
+  padding-bottom: 60px;
+  &__box {
+    display: flex;
+    align-items: baseline;
+  }
+
+  &__map,
+  &__contacts {
+    display: inline-block;
+    
+    font-style: normal;
+    @include font(400, 14px, 1.71, null);
+  }
+
+  &__map {
+    color: var(--primary-white-color);
+    transition: color var(--duration) var(--timing-function);
+  }
+
+  &__contacts {
+    margin-top: 9px;
+    color: var(--footer-contacts-color);
+    transition: color var(--duration) var(--timing-function);
+  }
+}
+
+.footer__map:hover,
+.footer__map:focus,
+.footer__contacts:hover,
+.footer__contacts:focus {
+  color: var(--accent-color);
+}
+
+.footer-logo {
+  display: inline-block;
+  color: var(--primary-white-color);
+
+  font-family: var(--secindary-font-family);
+  @include font(null, 26px, 1.19, null);
+  margin-bottom: 20px;
+}
+
+/* Join */
+
+.join {
+  margin-left: 70px;
+}
+
+.join__title,
+.subscribe__title {
+  display: block;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: var(--primary-white-color);
+  margin-bottom: 20px;
+}
+
+.sn-list--dark {
+  margin-top: 0;
+}
+
+.sn-list__link--dark {
+  color: var(--primary-white-color);
+  background-color: rgba(255, 255, 255, 0.1);
+
+  transition: background-color var(--duration) var(--timing-function);
+  &:hover,
+  &:focus {
+    background-color: var(--accent-color);
+  }
+}
+
+/* Subscribe */
+
+.subscribe {
+  margin-left: auto;
+  &__form {
+    @extend %align-list;
+    align-content: flex-end;
+  }
+
+  &__input {
+    width: 358px;
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    margin-right: 12px;
+
+    padding: 15px 16px;
+    @include font(null, 16px, 1.25, null);
+
+    color: rgba(255, 255, 255, 0.6);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    transition: border var(--duration) var(--timing-function);
+    &:focus {
+      border: 1px solid var(--accent-color);
+      outline: none;
+    }
+  }
+  &__icon {
+    fill: var(--primary-white-color);
+  }
+}

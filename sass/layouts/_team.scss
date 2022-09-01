@@ -1,0 +1,56 @@
+.team {
+  background-color: var(--secondary-bg-color);
+  &__list {
+    display: flex;
+    column-gap: 30px;
+  }
+  &__item {
+    width: calc((100% - 90px) / 4);
+    background-color: var(--primary-white-color);
+    @include font(null, 16px, 1.19, null);
+    text-align: center;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+  }
+  &__box {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  &__title {
+    color: var(--title-text-color);
+    @include font(500, 16px, 1.19, null);
+
+    margin-bottom: 10px;
+  }
+}
+
+.sn-list {
+  display: flex;
+  column-gap: 10px;
+  margin-top: 16px;
+  justify-content: center;
+  &__link {
+    @extend %align-list;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
+    background-color: var(--primary-white-color);
+    color: var(--icon-color);
+
+    transition: color var(--duration) var(--timing-function),
+      background-color var(--duration) var(--timing-function);
+    &:hover,
+    &:focus {
+      background-color: var(--accent-color);
+      color: var(--primary-white-color);
+    }
+  }
+
+  &__icon {
+    fill: currentColor;
+  }
+}

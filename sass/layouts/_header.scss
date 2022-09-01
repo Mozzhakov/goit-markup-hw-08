@@ -1,0 +1,87 @@
+.header {
+  padding-top: 24px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid var(--header-border-color);
+  &__container {
+    @extend %align-list;
+  }
+}
+
+.navigation {
+  display: flex;
+}
+
+.header-logo {
+  margin-right: 93px;
+  color: var(--primary-black-color);
+  font-family: var(--secindary-font-family);
+  @include font(null, 25px, 1.19, null);
+}
+
+.logo-part {
+  color: var(--accent-color);
+}
+
+.navigation__list {
+  @extend %align-list;
+  gap: 50px;
+}
+
+.navigation__link {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  color: var(--title-text-color);
+  @include font(500, 14px, 1.14, 0.02em);
+  
+  transition: color var(--duration) var(--timing-function);
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}
+
+.navigation__link--current {
+  position: relative;
+  color: var(--accent-color);
+  &::after {
+    position: absolute;
+    bottom: -1.5px;
+    left: 0;
+    content: '';
+
+    width: 100%;
+    height: 4px;
+
+    background-color: var(--accent-color);
+    border-radius: 2px;
+  }
+}
+
+.header-contscts {
+  @extend %align-list;
+  margin-left: auto;
+  gap: 50px;
+}
+
+.header-contscts__link {
+  @extend %align-list;
+  justify-content: center;
+  gap: 10px;
+
+  color: var(--primary-text-color);
+  @include font(500, 14px, 1.14, 0.02);
+
+  transition: color var(--duration) var(--timing-function);
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}
+
+.header-contscts__icon {
+  fill: var(--primary-text-color);
+  transition: fill var(--duration) var(--timing-function);
+  .header-contscts__link:hover & {
+    fill: var(--accent-color);
+  }
+}

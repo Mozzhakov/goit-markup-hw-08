@@ -1,0 +1,199 @@
+.backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  transition: opacity var(--duration) var(--timing-function),
+    visibility var(--duration) var(--timing-function), scale var(--duration) var(--timing-function);
+}
+
+.modal {
+  position: absolute;
+  width: 528px;
+  min-height: 581px;
+  top: 50%;
+  left: 50%;
+  padding: 40px;
+
+  transform: translate(-50%, -50%) scale(1) rotate(0);
+  transition: transform var(--duration) var(--timing-function);
+
+  background-color: var(--primary-white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.modal-title {
+  @include font(700, 20px, 1.15, 0.03em);
+  text-align: center;
+  color: var(--title-text-color);
+  margin-bottom: 12px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.input-title {
+  display: block;
+  @include font(null, 12px, 1.17, 0.01em);
+  color: var(--primary-text-color);
+  margin-bottom: 4px;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.modal-input {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 42px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: border var(--duration) var(--timing-function);
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  transition: fill var(--duration) var(--timing-function);
+}
+
+.modal-input:focus,
+.comment:focus,
+.comment:hover {
+  border: 1px solid var(--accent-color);
+  outline: none;
+}
+
+.modal-input:focus + .input-icon {
+  fill: var(--accent-color);
+}
+
+.input-with-icon:hover .modal-input {
+  border: 1px solid var(--accent-color);
+}
+
+.input-with-icon:hover .input-icon {
+  fill: var(--accent-color);
+}
+
+.form-comment-label {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.comment {
+  resize: none;
+  width: 100%;
+  height: 120px;
+  padding: 12px 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  @include font(400, 12px, 1.17, 0.01em);
+  
+  color: rgba(117, 117, 117, 0.5);
+  transition: border var(--duration) var(--timing-function);
+}
+
+.form-check-label {
+  display: block;
+  margin-bottom: 30px;
+}
+
+.check-box {
+  @extend %align-list;
+  justify-content: center;
+}
+
+.input-check ~ .check-icon {
+  fill: transparent;
+  background-color: transparent;
+}
+
+.check-wrap {
+  position: relative;
+  display: flex;
+}
+
+.vector-icon {
+  fill: var(--primary-black-color);
+  margin-right: 7px;
+  transition: fill var(--duration) var(--timing-function);
+}
+
+.check-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  fill: transparent;
+  transition: fill var(--duration) var(--timing-function),
+    background-color var(--duration) var(--timing-function),
+    border-radius var(--duration) var(--timing-function);
+}
+
+.input-check:checked ~ .check-wrap .vector-icon {
+  fill: transparent;
+}
+
+.input-check:focus ~ .check-wrap .vector-icon {
+  fill: var(--accent-color);
+}
+
+.input-check:checked ~ .check-wrap .check-icon {
+  fill: var(--primary-white-color);
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
+.policy-text {
+  line-height: 1.71;
+}
+
+.policy-link {
+  color: var(--accent-color);
+  text-decoration-line: underline;
+}
+
+
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0) rotate(0.5turn);
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+
+  @extend %align-list;
+  justify-content: center;
+
+  background-color: transparent;
+  fill: var(--primary-black-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  transition: fill var(--duration) var(--timing-function);
+}
+
+.modal-close:hover {
+  fill: var(--accent-color);
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
