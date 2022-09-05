@@ -18,19 +18,28 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./css/main.min.css">
+    <link rel="stylesheet" href="./css/main.min.css" />
   </head>
   <body>
     <!-- Шапка -->
-    <header class="header">
+    <header class="header portfolio-header">
       <div class="container header__container">
-        <nav class="navigation">
-          <a href="./index.html" class="header-logo link"><span class="logo-part">Web</span>Studio</a>
-          <ul class="navigation__list list">
+        <a href="./index.html" class="header-logo link"><span class="logo-part">Web</span>Studio</a>
+        <button type="button" class="mobile-menu-open js-open-menu">
+          <svg width="40" height="40">
+            <use href="./images/icons.svg#icon-menu"></use>
+          </svg>
+        </button>
+        <nav>
+          <ul class="navigation list">
             <li>
               <a href="./index.html" class="navigation__link link">Студия</a>
             </li>
-            <li><a href="./portfolio.html" class="navigation__link link navigation__link--current">Портфолио</a></li>
+            <li>
+              <a href="./portfolio.html" class="navigation__link link navigation__link--current"
+                >Портфолио</a
+              >
+            </li>
             <li><a href="" class="navigation__link link">Контакты</a></li>
           </ul>
         </nav>
@@ -51,6 +60,51 @@
           </li>
         </ul>
       </div>
+      <div class="mobile-menu js-menu-container">
+        <div class="mobile-menu__container">
+          <button
+            type="button"
+            class="mobile-menu-close js-close-menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <svg width="40" height="40" class="mobile-menu__icon">
+              <use href="./images/icons.svg#icon-close"></use>
+            </svg>
+          </button>
+          <nav class="mobile-nav">
+            <ul class="mobile-nav__list list">
+              <li class="mobile-nav__item">
+                <a href="./index.html" class="mobile-nav__link link">Студия</a>
+              </li>
+              <li class="mobile-nav__item">
+                <a href="./portfolio.html" class="mobile-nav__link link">Портфолио</a>
+              </li>
+              <li class="mobile-nav__item">
+                <a href="" class="mobile-nav__link link">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="mobile-menu-connect">
+            <ul class="mobile-cont list">
+              <li class="mobile-cont__item">
+                <a href="tel:+380961111111" class="mobile-cont__tel link">+38 096 111 11 11</a>
+              </li>
+              <li class="mobile-cont__item">
+                <a href="mailto:info@devstudio.com" class="mobile-cont__mail link">
+                  info@devstudio.com</a
+                >
+              </li>
+            </ul>
+            <ul class="mobile-sn list">
+              <li class="mobile-sn__item"><a href="" class="mobile-sn__link link">Instagram</a></li>
+              <li class="mobile-sn__item"><a href="" class="mobile-sn__link link">Twitter</a></li>
+              <li class="mobile-sn__item"><a href="" class="mobile-sn__link link">Facebook</a></li>
+              <li class="mobile-sn__item"><a href="" class="mobile-sn__link link">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </header>
     <main>
       <!-- Примеры работ -->
@@ -68,7 +122,21 @@
             <li class="card-set__item">
               <a href="#" class="card-set__link link">
                 <div class="card-set__top-wrap">
-                  <img src="./images/example1.jpg" alt="Технокряк" width="370" />
+                  <picture>
+                    <source
+                      srcset="./images/desk-ex1.jpg 1x, ./images/desk-ex1@2x.jpg 2x"
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="./images/tab-ex1.jpg 1x, ./images/tab-ex1@2x.jpg 2x"
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="./images/mob-ex1.jpg 1x, ./images/mob-ex1@2x.jpg 2x"
+                      media="(max-width: 767px)"
+                    />
+                    <img src="./images/mob-ex1.jpg" alt="Технокряк" width="450" />
+                  </picture>
                   <p class="card-set__overlay">
                     Ресурс предлагает комплексные предложения с разным уровнем функционала и
                     сервисов. Все это позволит посетителю получить исчерпывающие сведения<br />
@@ -84,11 +152,25 @@
             <li class="card-set__item">
               <a href="#" class="card-set__link link">
                 <div class="card-set__top-wrap">
-                  <img
-                    src="./images/example2.jpg"
-                    alt="Постер New Orlean vs Golden Star"
-                    width="370"
-                  />
+                  <picture>
+                    <source
+                      srcset="./images/desk-ex2.jpg 1x, ./images/desk-ex2@2x.jpg 2x"
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="./images/tab-ex2.jpg 1x, ./images/tab-ex2@2x.jpg 2x"
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="./images/mob-ex2.jpg 1x, ./images/mob-ex2@2x.jpg 2x"
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      src="./images/mob-ex2.jpg"
+                      alt="Постер New Orlean vs Golden Star"
+                      width="450"
+                    />
+                  </picture>
                   <p class="card-set__overlay">
                     Ресурс предлагает комплексные предложения с разным уровнем функционала и
                     сервисов. Все это позволит посетителю получить исчерпывающие сведения<br />
@@ -104,7 +186,21 @@
             <li class="card-set__item">
               <a href="#" class="card-set__link link">
                 <div class="card-set__top-wrap">
-                  <img src="./images/example3.jpg" alt="Ресторан Seafood" width="370" />
+                  <picture>
+                    <source
+                      srcset="./images/desk-ex3.jpg 1x, ./images/desk-ex3@2x.jpg 2x"
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="./images/tab-ex3.jpg 1x, ./images/tab-ex3@2x.jpg 2x"
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="./images/mob-ex3.jpg 1x, ./images/mob-ex3@2x.jpg 2x"
+                      media="(max-width: 767px)"
+                    />
+                    <img src="./images/mob-ex3.jpg" alt="Ресторан Seafood" width="450" />
+                  </picture>
                   <p class="card-set__overlay">
                     Ресурс предлагает комплексные предложения с разным уровнем функционала и
                     сервисов. Все это позволит посетителю получить исчерпывающие сведения<br />
@@ -120,7 +216,21 @@
             <li class="card-set__item">
               <a href="#" class="card-set__link link">
                 <div class="card-set__top-wrap">
-                  <img src="./images/example4.jpg" alt="Проект Prime" width="370" />
+                  <picture>
+                    <source
+                      srcset="./images/desk-ex4.jpg 1x, ./images/desk-ex4@2x.jpg 2x"
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="./images/tab-ex4.jpg 1x, ./images/tab-ex4@2x.jpg 2x"
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="./images/mob-ex4.jpg 1x, ./images/mob-ex4@2x.jpg 2x"
+                      media="(max-width: 767px)"
+                    />
+                    <img src="./images/mob-ex4.jpg" alt="Проект Prime" width="450" />
+                  </picture>
                   <p class="card-set__overlay">
                     Ресурс предлагает комплексные предложения с разным уровнем функционала и
                     сервисов. Все это позволит посетителю получить исчерпывающие сведения<br />
@@ -136,7 +246,21 @@
             <li class="card-set__item">
               <a href="#" class="card-set__link link">
                 <div class="card-set__top-wrap">
-                  <img src="./images/example5.jpg" alt="Проект Boxes" width="370" />
+                  <picture>
+                    <source
+                      srcset="./images/desk-ex5.jpg 1x, ./images/desk-ex5@2x.jpg 2x"
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="./images/tab-ex5.jpg 1x, ./images/tab-ex5@2x.jpg 2x"
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="./images/mob-ex5.jpg 1x, ./images/mob-ex5@2x.jpg 2x"
+                      media="(max-width: 767px)"
+                    />
+                    <img src="./images/mob-ex5.jpg" alt="Проект Boxes" width="450" />
+                  </picture>
                   <p class="card-set__overlay">
                     Ресурс предлагает комплексные предложения с разным уровнем функционала и
                     сервисов. Все это позволит посетителю получить исчерпывающие сведения<br />
@@ -152,7 +276,21 @@
             <li class="card-set__item">
               <a href="#" class="card-set__link link">
                 <div class="card-set__top-wrap">
-                  <img src="./images/example6.jpg" alt="Inspiration has no Borders" width="370" />
+                  <picture>
+                    <source
+                      srcset="./images/desk-ex6.jpg 1x, ./images/desk-ex6@2x.jpg 2x"
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="./images/tab-ex6.jpg 1x, ./images/tab-ex6@2x.jpg 2x"
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="./images/mob-ex6.jpg 1x, ./images/mob-ex6@2x.jpg 2x"
+                      media="(max-width: 767px)"
+                    />
+                    <img src="./images/mob-ex6.jpg" alt="Inspiration has no Borders" width="450" />
+                  </picture>
                   <p class="card-set__overlay">
                     Ресурс предлагает комплексные предложения с разным уровнем функционала и
                     сервисов. Все это позволит посетителю получить исчерпывающие сведения<br />
@@ -168,7 +306,21 @@
             <li class="card-set__item">
               <a href="#" class="card-set__link link">
                 <div class="card-set__top-wrap">
-                  <img src="./images/example7.jpg" alt="Издание Limited Edition" width="370" />
+                  <picture>
+                    <source
+                      srcset="./images/desk-ex7.jpg 1x, ./images/desk-ex7@2x.jpg 2x"
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="./images/tab-ex7.jpg 1x, ./images/tab-ex7@2x.jpg 2x"
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="./images/mob-ex7.jpg 1x, ./images/mob-ex7@2x.jpg 2x"
+                      media="(max-width: 767px)"
+                    />
+                    <img src="./images/mob-ex7.jpg" alt="Издание Limited Edition" width="450" />
+                  </picture>
                   <p class="card-set__overlay">
                     Ресурс предлагает комплексные предложения с разным уровнем функционала и
                     сервисов. Все это позволит посетителю получить исчерпывающие сведения<br />
@@ -184,7 +336,21 @@
             <li class="card-set__item">
               <a href="#" class="card-set__link link">
                 <div class="card-set__top-wrap">
-                  <img src="./images/example8.jpg" alt="Проект LAB" width="370" />
+                  <picture>
+                    <source
+                      srcset="./images/desk-ex8.jpg 1x, ./images/desk-ex8@2x.jpg 2x"
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="./images/tab-ex8.jpg 1x, ./images/tab-ex8@2x.jpg 2x"
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="./images/mob-ex8.jpg 1x, ./images/mob-ex8@2x.jpg 2x"
+                      media="(max-width: 767px)"
+                    />
+                    <img src="./images/mob-ex8.jpg" alt="Проект LAB" width="450" />
+                  </picture>
                   <p class="card-set__overlay">
                     Ресурс предлагает комплексные предложения с разным уровнем функционала и
                     сервисов. Все это позволит посетителю получить исчерпывающие сведения<br />
@@ -200,7 +366,21 @@
             <li class="card-set__item">
               <a href="#" class="card-set__link link">
                 <div class="card-set__top-wrap">
-                  <img src="./images/example9.jpg" alt="Growing Business" width="370" />
+                  <picture>
+                    <source
+                      srcset="./images/desk-ex9.jpg 1x, ./images/desk-ex9@2x.jpg 2x"
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="./images/tab-ex9.jpg 1x, ./images/tab-ex9@2x.jpg 2x"
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="./images/mob-ex9.jpg 1x, ./images/mob-ex9@2x.jpg 2x"
+                      media="(max-width: 767px)"
+                    />
+                    <img src="./images/mob-ex9.jpg" alt="Growing Business" width="450" />
+                  </picture>
                   <p class="card-set__overlay">
                     Ресурс предлагает комплексные предложения с разным уровнем функционала и
                     сервисов. Все это позволит посетителю получить исчерпывающие сведения<br />
@@ -220,57 +400,63 @@
     <!-- Подвал -->
     <footer class="footer">
       <div class="container footer__box">
-        <div>
-          <a href="./index.html" class="footer-logo link"><span class="logo-part">Web</span>Studio</a>
-          <address>
-            <ul class="list">
+        <div class="footer__wrap">
+          <div class="footer__address">
+            <a href="./index.html" class="footer-logo link"
+              ><span class="logo-part">Web</span>Studio</a
+            >
+            <address>
+              <ul class="list">
+                <li>
+                  <a
+                    href="https://goo.gl/maps/SSPjzbEgwxRzzAgQ6"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    class="footer__map link"
+                    >г. Киев, пр-т Леси Украинки, 26</a
+                  >
+                </li>
+                <li>
+                  <a href="mailto:info@devstudio.com" class="footer__contacts link"
+                    >info@devstudio.com</a
+                  >
+                </li>
+                <li>
+                  <a href="tel:+380961111111" class="footer__contacts link">+38 096 111 11 11</a>
+                </li>
+              </ul>
+            </address>
+          </div>
+
+          <div class="join">
+            <b class="join__title">Присоединяйтесь</b>
+            <ul class="sn-list sn-list--dark list">
               <li>
-                <a
-                  href="https://goo.gl/maps/SSPjzbEgwxRzzAgQ6"
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                  class="footer__map link"
-                  >г. Киев, пр-т Леси Украинки, 26</a
-                >
+                <a href="#" class="sn-list__link sn-list__link--dark"
+                  ><svg class="sn-list__icon" width="20" height="20">
+                    <use href="./images/icons.svg#icon-instagram"></use></svg
+                ></a>
               </li>
               <li>
-                <a href="mailto:info@devstudio.com" class="footer__contacts link">info@devstudio.com</a>
+                <a href="#" class="sn-list__link sn-list__link--dark"
+                  ><svg class="sn-list__icon" width="20" height="20">
+                    <use href="./images/icons.svg#icon-twitter"></use></svg
+                ></a>
               </li>
               <li>
-                <a href="tel:+380961111111" class="footer__contacts link">+38 096 111 11 11</a>
+                <a href="#" class="sn-list__link sn-list__link--dark"
+                  ><svg class="sn-list__icon" width="20" height="20">
+                    <use href="./images/icons.svg#icon-facebook"></use></svg
+                ></a>
+              </li>
+              <li>
+                <a href="#" class="sn-list__link sn-list__link--dark"
+                  ><svg class="sn-list__icon" width="20" height="20">
+                    <use href="./images/icons.svg#icon-linkedin"></use></svg
+                ></a>
               </li>
             </ul>
-          </address>
-        </div>
-
-        <div class="join">
-          <b class="join__title">Присоединяйтесь</b>
-          <ul class="sn-list sn-list--dark list">
-            <li>
-              <a href="#" class="sn-list__link sn-list__link--dark"
-                ><svg class="sn-list__icon" width="20" height="20">
-                  <use href="./images/icons.svg#icon-instagram"></use></svg
-              ></a>
-            </li>
-            <li>
-              <a href="#" class="sn-list__link sn-list__link--dark"
-                ><svg class="sn-list__icon" width="20" height="20">
-                  <use href="./images/icons.svg#icon-twitter"></use></svg
-              ></a>
-            </li>
-            <li>
-              <a href="#" class="sn-list__link sn-list__link--dark"
-                ><svg class="sn-list__icon" width="20" height="20">
-                  <use href="./images/icons.svg#icon-facebook"></use></svg
-              ></a>
-            </li>
-            <li>
-              <a href="#" class="sn-list__link sn-list__link--dark"
-                ><svg class="sn-list__icon" width="20" height="20">
-                  <use href="./images/icons.svg#icon-linkedin"></use></svg
-              ></a>
-            </li>
-          </ul>
+          </div>
         </div>
 
         <div class="subscribe">
@@ -293,5 +479,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/mobile-menu.js"></script>
   </body>
 </html>

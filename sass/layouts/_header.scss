@@ -1,38 +1,59 @@
 .header {
-  padding-top: 24px;
-  padding-bottom: 25px;
-  border-bottom: 1px solid var(--header-border-color);
+  padding-top: 10px;
+  padding-bottom: 10px;
   &__container {
     @extend %align-list;
   }
+
+  @include tablet {
+    padding-top: 21px;
+    padding-bottom: 21px;
+  }
+
+  @include desktop {
+    padding-top: 24px;
+    padding-bottom: 25px;
+  }
 }
 
-.navigation {
-  display: flex;
+.portfolio-header {
+  border-bottom: 1px solid var(--header-border-color);
 }
 
 .header-logo {
-  margin-right: 93px;
   color: var(--primary-black-color);
   font-family: var(--secindary-font-family);
-  @include font(null, 25px, 1.19, null);
+  @include font(null, 24px, 1.17, null);
+
+  @include tablet {
+    margin-right: 88px;
+  }
+
+  @include desktop {
+    margin-right: 93px;
+    @include font(null, 26px, 1.19, null);
+  }
 }
 
 .logo-part {
   color: var(--accent-color);
 }
 
-.navigation__list {
-  @extend %align-list;
-  gap: 50px;
+.navigation {
+  display: none;
+  @include tablet {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
 }
 
 .navigation__link {
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding-top: 33px;
+  padding-bottom: 33px;
   color: var(--title-text-color);
   @include font(500, 14px, 1.14, 0.02em);
-  
+
   transition: color var(--duration) var(--timing-function);
   &:hover,
   &:focus {
@@ -45,7 +66,7 @@
   color: var(--accent-color);
   &::after {
     position: absolute;
-    bottom: -1.5px;
+    bottom: 0;
     left: 0;
     content: '';
 
@@ -58,9 +79,22 @@
 }
 
 .header-contscts {
-  @extend %align-list;
-  margin-left: auto;
-  gap: 50px;
+  display: none;
+
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-left: auto;
+  }
+
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+  }
 }
 
 .header-contscts__link {
@@ -69,12 +103,15 @@
   gap: 10px;
 
   color: var(--primary-text-color);
-  @include font(500, 14px, 1.14, 0.02);
+  @include font(500, 12px, 1.17, 0.02em);
 
   transition: color var(--duration) var(--timing-function);
   &:hover,
   &:focus {
     color: var(--accent-color);
+  }
+  @include desktop {
+    @include font(null, 14px, 1.14, null);
   }
 }
 
@@ -83,5 +120,118 @@
   transition: fill var(--duration) var(--timing-function);
   .header-contscts__link:hover & {
     fill: var(--accent-color);
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  background-color: var(--primary-white-color);
+  padding: 48px 40px;
+  overflow-y: scroll;
+  transform: translateX(100%);
+  transition: transform var(--duration) var(--timing-function);
+  &.is-open {
+    transform: translateX(0);
+  }
+  @include tablet {
+    display: none;
+  }
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    @include mobile {
+      max-width: 480px;
+    }
+  }
+}
+
+.mobile-menu-open {
+  @extend %align-list;
+  justify-content: center;
+  padding: 0;
+  margin-left: auto;
+  background-color: transparent;
+  border: none;
+  @include tablet {
+    display: none;
+  }
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  @extend %align-list;
+  justify-content: center;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  color: var(--accent-color);
+  &:hover .mobile-menu__icon,
+  &:focus .mobile-menu__icon {
+    fill: var(--accent-color);
+  }
+}
+
+.mobile-menu__icon {
+  fill: var(--title-text-color);
+  transition: fill var(--duration) var(--timing-function);
+}
+
+.mobile-nav__item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.mobile-nav__link {
+  @include font(500, 40px, 1.18, 0.02em);
+  color: var(--title-text-color);
+  transition: color var(--duration) var(--timing-function);
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}
+
+.mobile-cont {
+  margin-bottom: 64px;
+  &__item:not(:last-child) {
+    margin-bottom: 32px;
+  }
+  &__tel {
+    @include font(500, 34px, 1.18, 0.02em);
+    color: var(--accent-color);
+  }
+  &__mail {
+    @include font(500, 24px, 1.17, 0.02em);
+    color: var(--primary-text-color);
+  }
+}
+
+.mobile-sn {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 5px;
+  margin-bottom: 48px;
+  &__item {
+    @include font(500, 18px, 1.22, 0.02em);
+  }
+  &__item:not(:last-child)::after {
+    content: '';
+    width: 22px;
+    height: 0;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    transform: rotate(90deg);
+    margin: 0 10px;
+  }
+  &__link {
+    color: var(--accent-color);
   }
 }

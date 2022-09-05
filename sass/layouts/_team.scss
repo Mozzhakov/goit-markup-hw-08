@@ -2,10 +2,19 @@
   background-color: var(--secondary-bg-color);
   &__list {
     display: flex;
-    column-gap: 30px;
+    gap: 30px;
+    flex-wrap: wrap;
   }
   &__item {
-    width: calc((100% - 90px) / 4);
+    width: 100%;
+    @include tablet {
+      width: calc((100% - 30px) / 2);
+    }
+
+    @include desktop {
+      width: calc((100% - 90px) / 4);
+    }
+
     background-color: var(--primary-white-color);
     @include font(null, 16px, 1.19, null);
     text-align: center;

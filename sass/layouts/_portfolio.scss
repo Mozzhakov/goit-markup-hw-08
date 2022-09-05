@@ -1,8 +1,17 @@
 .buttons-list {
   display: flex;
-  margin-bottom: 50px;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 40px;
   gap: 8px;
+  @include tablet {
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  @include desktop {
+    margin-bottom: 50px;
+    justify-content: center;
+  }
 }
 
 .card-set {
@@ -10,8 +19,14 @@
   flex-wrap: wrap;
   gap: 30px;
   &__item {
-    width: calc((100% - 60px) / 3);
+    width: 100%;
     border: 1px solid var(--examples-border-color);
+    @include tablet {
+      width: calc((100% - 30px) / 2);
+    }
+    @include desktop {
+      width: calc((100% - 60px) / 3);
+    }
   }
   &__link {
     display: block;
@@ -40,7 +55,7 @@
     color: var(--primary-white-color);
     @include font(null, 18px, 1.56, null);
 
-    transform: translateY(100%);
+    transform: translateY(101%);
     transition: transform var(--duration) var(--timing-function);
     .card-set__link:hover &,
     .card-set__link:focus & {
