@@ -4,6 +4,7 @@
   justify-content: flex-start;
   margin-bottom: 40px;
   gap: 8px;
+  row-gap: 15px;
   @include tablet {
     justify-content: center;
     margin-bottom: 30px;
@@ -50,16 +51,20 @@
     width: 100%;
     height: 100%;
     padding: 0 24px;
-
     background-color: rgba(33, 150, 243, 0.9);
     color: var(--primary-white-color);
-    @include font(null, 18px, 1.56, null);
-
+    @include font(null, 14px, 1.56, null);
+    opacity: 0;
     transform: translateY(101%);
-    transition: transform var(--duration) var(--timing-function);
+    transition: transform var(--duration) var(--timing-function), opacity var(--duration) var(--timing-function);
     .card-set__link:hover &,
     .card-set__link:focus & {
       transform: translateY(0);
+      opacity: 1;
+    }
+
+    @include mobile {
+      @include font(null, 18px, null, null);
     }
   }
   &__wrap {
