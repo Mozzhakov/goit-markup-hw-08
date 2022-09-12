@@ -601,6 +601,7 @@ button {
 }
 
 .mobile-nav__link {
+  display: block;
   font-weight: 500;
   font-size: 40px;
   line-height: 1.18;
