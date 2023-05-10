@@ -114,14 +114,22 @@
         <div class="container">
           <h1 class="visually-hidden">Наши проекты</h1>
           <ul class="buttons-list list">
-            <li><button type="button" class="button-secondary">Все</button></li>
-            <li><button type="button" class="button-secondary">Веб-сайты</button></li>
-            <li><button type="button" class="button-secondary">Приложения</button></li>
-            <li><button type="button" class="button-secondary">Дизайн</button></li>
-            <li><button type="button" class="button-secondary">Маркетинг</button></li>
+            <li><button type="button" class="button-secondary" data-type="all">Все</button></li>
+            <li>
+              <button type="button" class="button-secondary" data-type="web">Веб-сайты</button>
+            </li>
+            <li>
+              <button type="button" class="button-secondary" data-type="app">Приложения</button>
+            </li>
+            <li>
+              <button type="button" class="button-secondary" data-type="design">Дизайн</button>
+            </li>
+            <li>
+              <button type="button" class="button-secondary" data-type="mark">Маркетинг</button>
+            </li>
           </ul>
           <ul class="card-set list">
-            <li class="card-set__item">
+            <li class="card-set__item" data-type="web">
               <a href="#" class="card-set__link link">
                 <div class="card-set__top-wrap">
                   <picture>
@@ -151,7 +159,7 @@
                 </div>
               </a>
             </li>
-            <li class="card-set__item">
+            <li class="card-set__item" data-type="design">
               <a href="#" class="card-set__link link">
                 <div class="card-set__top-wrap">
                   <picture>
@@ -185,7 +193,7 @@
                 </div>
               </a>
             </li>
-            <li class="card-set__item">
+            <li class="card-set__item" data-type="app">
               <a href="#" class="card-set__link link">
                 <div class="card-set__top-wrap">
                   <picture>
@@ -215,7 +223,7 @@
                 </div>
               </a>
             </li>
-            <li class="card-set__item">
+            <li class="card-set__item" data-type="mark">
               <a href="#" class="card-set__link link">
                 <div class="card-set__top-wrap">
                   <picture>
@@ -245,7 +253,7 @@
                 </div>
               </a>
             </li>
-            <li class="card-set__item">
+            <li class="card-set__item" data-type="app">
               <a href="#" class="card-set__link link">
                 <div class="card-set__top-wrap">
                   <picture>
@@ -275,7 +283,7 @@
                 </div>
               </a>
             </li>
-            <li class="card-set__item">
+            <li class="card-set__item" data-type="web">
               <a href="#" class="card-set__link link">
                 <div class="card-set__top-wrap">
                   <picture>
@@ -305,7 +313,7 @@
                 </div>
               </a>
             </li>
-            <li class="card-set__item">
+            <li class="card-set__item" data-type="design">
               <a href="#" class="card-set__link link">
                 <div class="card-set__top-wrap">
                   <picture>
@@ -335,7 +343,7 @@
                 </div>
               </a>
             </li>
-            <li class="card-set__item">
+            <li class="card-set__item" data-type="mark">
               <a href="#" class="card-set__link link">
                 <div class="card-set__top-wrap">
                   <picture>
@@ -365,7 +373,7 @@
                 </div>
               </a>
             </li>
-            <li class="card-set__item">
+            <li class="card-set__item" data-type="app">
               <a href="#" class="card-set__link link">
                 <div class="card-set__top-wrap">
                   <picture>
@@ -482,5 +490,6 @@
       </div>
     </footer>
     <script src="./js/mobile-menu.js"></script>
+    <script src="./js/radio-btns.js"></script>
   </body>
 </html>
