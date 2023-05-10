@@ -7,6 +7,7 @@ const allCardsArr = Array.from(allCards);
 btnList.addEventListener('click', changeList);
 
 function changeList(e) {
+  console.log('qwe');
   if (e.target.nodeName !== 'BUTTON') return;
 
   allCards.forEach(el => el.remove());
