@@ -7,14 +7,16 @@ const allCardsArr = Array.from(allCards);
 btnList.addEventListener('click', changeList);
 
 function changeList(e) {
-  console.log('qwe');
   if (e.target.nodeName !== 'BUTTON') return;
 
-  allCards.forEach(el => el.remove());
-  const neededEls = allCardsArr.filter(el => el.dataset.type === e.target.dataset.type);
-  neededEls.map(el => cardList.appendChild(el));
+  const neededEls =
+    e.target.dataset.type === 'all'
+      ? allCardsArr
+      : allCardsArr.filter(el => el.dataset.type === e.target.dataset.type);
 
-  if (e.target.dataset.type === 'all') {
-    allCardsArr.map(el => cardList.appendChild(el));
-  }
+  const markup = neededEls
+    .map(el => `<li class="card-set__item" data-type="${el.dataset.type}">${el.innerHTML}</li>`)
+    .join('');
+  console.log(markup);
+  cardList.innerHTML = markup;
 }
