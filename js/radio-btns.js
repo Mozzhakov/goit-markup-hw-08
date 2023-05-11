@@ -17,6 +17,6 @@ function changeList(e) {
   const markup = neededEls
     .map(el => `<li class="card-set__item" data-type="${el.dataset.type}">${el.innerHTML}</li>`)
     .join('');
-  console.log(markup);
+
   cardList.innerHTML = markup;
 }
